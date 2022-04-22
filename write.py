@@ -6,11 +6,11 @@ def writerXlsx(listAns):
         'FavouriteField' : [listAns[0]], 
         'FavouriteCamp': [listAns[1]], 
         'Important': [listAns[2]], 
-        'Java' : [listAns[3]], 
-        'Python' : [listAns[4]],
-        'SQL' : [listAns[5]],
-        'Java Script' : [listAns[6]],
-        'C#' : [listAns[7]] 
+        'Java' : ['yes' if listAns[3] == '1' else 'no' ], 
+        'Python' : ['yes' if listAns[4] == '1' else 'no'],
+        'SQL' : ['yes' if listAns[5] == '1' else 'no'],
+        'Java Script' : ['yes' if listAns[6] == '1' else 'no'],
+        'C#' : ['yes' if listAns[7] == '1' else 'no'] 
         })
     frames = [readDF, newdf]
     result = pd.concat(frames)
