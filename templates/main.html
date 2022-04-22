@@ -18,7 +18,7 @@
     <div class="card  col-9 mt-5 ">
       <h5 class="card-header">แบบสอบถามการตัดสินใจเข้าศึกษาต่อในระดับอุดมศึกษาด้านคอมพิวเตอร์</h5>
       <div class="card-body">
-        <form action="/" method="POST">
+        <form  >
           <div class="mb-3">
 
             <label for="FavoriteCamp"
@@ -108,12 +108,12 @@
 
 
 
-      </div>
+      </div></form>
       <div class="card-footer ">
-        <button type="submit" name="input" id="btnSubmit" class="btn btn-primary" data-bs-toggle="modal"
+        <button name="input" id="btnSubmit" class="btn btn-primary" data-bs-toggle="modal"
           data-bs-target="#staticBackdrop">Submit</button>
       </div>
-      </form>
+      
     </div>
   </div>
   <div class="modal " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
@@ -139,7 +139,7 @@
       const element = box[i];
       element.addEventListener("change", function () {
         document.querySelector("."+element.id).value  = element.checked + 0 
-      console.log(element.id, document.querySelector("."+element.id).value )
+      //console.log(element.id, document.querySelector("."+element.id).value )
       })
     }
     let btnSubmit = document.getElementById("btnSubmit")
@@ -149,11 +149,7 @@
       let FavoriteField = document.querySelector("#FavoriteField").value
       let FavoriteCamp = document.querySelector("#FavoriteCamp").value
       let MostImportantThingOfDesigning = document.querySelector("#MostImportantThingOfDesigning").value
-      let Java = document.querySelector("#Java").checked + 0 // boolean  +  integer  =  integer
-      let Python = document.querySelector("#Python").checked + 0
-      let SQL = document.querySelector("#SQL").checked + 0
-      let js = document.querySelector("#js").checked + 0
-      let C = document.querySelector("#C").checked + 0
+
 
       //เช็คคำตอบว่าได้เลือกหรือไม่
       let ans = [FavoriteField, FavoriteCamp, MostImportantThingOfDesigning]
@@ -169,8 +165,15 @@
         }
 
       }
+      console.log(canSend)
       //ตัวอย่างตำตอบที่ได้
-      console.log("FavoriteField: ", FavoriteField, "||FavoriteCamp :", FavoriteCamp, "||MostImportantThingOfDesigning :", MostImportantThingOfDesigning, " Java ", Java, "Python ", Python, "SQL ", SQL, "js ", js, "C ", C)
+      //console.log("FavoriteField: ", FavoriteField, "||FavoriteCamp :", FavoriteCamp, "||MostImportantThingOfDesigning :", MostImportantThingOfDesigning, " Java ", Java, "Python ", Python, "SQL ", SQL, "js ", js, "C ", C)
+      if (canSend) {
+        document.querySelector("form").method="POST"
+        document.querySelector("form").action = '/'
+        document.querySelector("form").submit();;
+      }
+      
     });
     for (let i = 0; i < feedback.length; i++) {
       const element = feedback[i];
