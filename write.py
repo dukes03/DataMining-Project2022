@@ -3,9 +3,9 @@ import pandas as pd
 def writerXlsx(listAns):
     readDF = pd.read_excel(r'test.xlsx')
     newdf = pd.DataFrame({
-        'FavouriteField' : [listAns[0]], 
-        'FavouriteCamp': [listAns[1]], 
-        'Important': [listAns[2]], 
+        'FavoriteField' : [listAns[0]], 
+        'FavoriteCamp': [listAns[1]], 
+        'MostImportantThingOfDesigning': [listAns[2]], 
         'Java' : ['yes' if listAns[3] == '1' else 'no' ], 
         'Python' : ['yes' if listAns[4] == '1' else 'no'],
         'SQL' : ['yes' if listAns[5] == '1' else 'no'],
