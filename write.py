@@ -1,8 +1,8 @@
 import pandas as pd
+import xlsxwriter
 
 def writerXlsx(listAns):
-    readDF = pd.read_excel(r'test.xlsx')
-    newdf = pd.DataFrame({
+    df = pd.DataFrame({
         'FavoriteField' : [listAns[0]], 
         'FavoriteCamp': [listAns[1]], 
         'MostImportantThingOfDesigning': [listAns[2]], 
@@ -12,11 +12,9 @@ def writerXlsx(listAns):
         'Java Script' : ['yes' if listAns[6] == '1' else 'no'],
         'C#' : ['yes' if listAns[7] == '1' else 'no'] 
         })
-    frames = [readDF, newdf]
-    result = pd.concat(frames)
-
+    
     writer = pd.ExcelWriter('test.xlsx', engine='xlsxwriter')
-
-    result.to_excel(writer, index = False)
+    
+    df.to_excel(writer, index = False)
     writer.save()
     print("save xlsx")
