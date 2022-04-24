@@ -4,7 +4,7 @@ from flask import request
 from  write import writerXlsx
 import rapidminer
 import pandas as pd
-app = Flask(__name__)
+app = Flask(__name__,static_url_path='/static')
 
 @app.route("/")
 def index():
@@ -24,6 +24,6 @@ def save():
     myoutput = rm.read_resource("//Local Repository/data/Output")
     resultStr = myoutput["prediction(Faculty)"].to_string()
     result = resultStr.split("    ")
-    return result[1]
+    return  render_template('result.html', result= result[1])# 
     
 app.run(debug=True)

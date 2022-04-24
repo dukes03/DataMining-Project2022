@@ -27,7 +27,7 @@ btnSubmit.addEventListener("click", function () {
         
     }
     //ตัวอย่างตำตอบที่ได้
-    console.log("FavoriteField: ",FavoriteField, "||FavoriteCamp :",FavoriteCamp, "||MostImportantThingOfDesigning :" ,MostImportantThingOfDesigning, " Java ", Java, "Python ", Python, "SQL ", SQL,"js ", js,"C ", C)
+    //console.log("FavoriteField: ",FavoriteField, "||FavoriteCamp :",FavoriteCamp, "||MostImportantThingOfDesigning :" ,MostImportantThingOfDesigning, " Java ", Java, "Python ", Python, "SQL ", SQL,"js ", js,"C ", C)
 });
 for (let i = 0; i < feedback.length; i++) {
     const element = feedback[i];
